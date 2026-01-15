@@ -1,5 +1,6 @@
 package example;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -22,13 +23,23 @@ public class App {
                 char operator = sc.next().charAt(0);
 
                 int result = calculator.calculate(num1, num2, operator);
-
                 System.out.println("결과: " + result);
+
+                System.out.println("누적 결과: " + calculator.getResults());
+
+                System.out.println("초기화할까요? (clear 입력 시 초기화)");
+                String clear = sc.next();
+                if ("clear".equals(clear)) {
+                    calculator.setResults(new ArrayList<>());
+                    System.out.println("초기화 후: " + calculator.getResults());
+                }
 
                 System.out.println("더 입력 하시겠습니까? (exit 입력 시 종료됩니다)");
                 String exit = sc.next();
                 if ("exit".equals(exit)) {
                     break;
+
+
                 }
             } catch (InputMismatchException e) {
                 System.out.println("숫자만 입력하세요!");
