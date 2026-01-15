@@ -27,7 +27,6 @@ public class App {
 
                 System.out.println("더 입력 하시겠습니까? (exit 입력 시 종료됩니다)");
                 String exit = sc.next();
-
                 if ("exit".equals(exit)) {
                     break;
                 }
@@ -35,7 +34,7 @@ public class App {
                 System.out.println("숫자만 입력하세요!");
                 sc.nextLine();
                 continue;
-            } catch (AbstractMethodError | IllegalArgumentException e) {
+            } catch (ArithmeticException | IllegalArgumentException e) {
                 System.out.println(e.getMessage());
                 continue;
             }
