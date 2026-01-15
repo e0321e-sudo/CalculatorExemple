@@ -1,7 +1,7 @@
 package example;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class Calculator {
 
@@ -40,5 +40,13 @@ public class Calculator {
     }
     public void setResults(ArrayList<Integer> results) {
         this.results = new ArrayList<>(results);
+    }
+
+    public void removeResult(){
+        if (results.isEmpty()) {
+            System.out.println("삭제할 결과가 없습니다.");
+            return;
+        }
+        results.remove(0);
     }
 }

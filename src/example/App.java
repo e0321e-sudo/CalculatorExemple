@@ -24,23 +24,25 @@ public class App {
 
                 int result = calculator.calculate(num1, num2, operator);
                 System.out.println("결과: " + result);
-
                 System.out.println("누적 결과: " + calculator.getResults());
 
-                System.out.println("초기화할까요? (clear 입력 시 초기화)");
-                String clear = sc.next();
-                if ("clear".equals(clear)) {
+                System.out.println("명령어 입력 (clear: 초기화 remove: 첫 결과 삭제 enter: 계속)");
+                String commend = sc.nextLine();
+                if ("clear".equals(commend)) {
                     calculator.setResults(new ArrayList<>());
                     System.out.println("초기화 후: " + calculator.getResults());
+                } else if ("remove".equals(commend)){
+                    calculator.removeResult();
+                    System.out.println("삭제 후: " + calculator.getResults());
+                } else {
                 }
 
                 System.out.println("더 입력 하시겠습니까? (exit 입력 시 종료됩니다)");
                 String exit = sc.next();
                 if ("exit".equals(exit)) {
-                    break;
-
-
+                    run = false;
                 }
+
             } catch (InputMismatchException e) {
                 System.out.println("숫자만 입력하세요!");
                 sc.nextLine();
