@@ -2,7 +2,7 @@ package walkclass;
 
 import java.util.Scanner;
 
-    class Manu {
+    class Menu {
         String name;
         int price;
         boolean soldout;
@@ -19,20 +19,20 @@ import java.util.Scanner;
         public class Main {
             public static void main(String[] args) {
 
-                Manu manu = new Manu();
-                manu.name = "핫초코";
-                manu.price = 2500;
-                manu.soldout = true;
+                Menu menu = new Menu();
+                menu.name = "핫초코";
+                menu.price = 2500;
+                menu.soldout = true;
 
-                Manu manu1 = new Manu();
-                manu1.name = "레몬에이드";
-                manu1.price = 3500;
-                manu1.soldout = false;
+                Menu menu1 = new Menu();
+                menu1.name = "레몬에이드";
+                menu1.price = 3500;
+                menu1.soldout = false;
 
-                Manu manu2 = new Manu();
-                manu2.name = "딸기스무디";
-                manu2.price = 4000;
-                manu2.soldout = false;
+                Menu menu2 = new Menu();
+                menu2.name = "딸기스무디";
+                menu2.price = 4000;
+                menu2.soldout = false;
 
                 System.out.println("짜잔 café open!");
 
@@ -46,9 +46,9 @@ import java.util.Scanner;
                     int choice = sc.nextInt();
 
                     if (choice == 1) {
-                        manu.printInfo();
-                        manu1.printInfo();
-                        manu2.printInfo();
+                        menu.printInfo();
+                        menu1.printInfo();
+                        menu2.printInfo();
                     } else if (choice == 2) {
                         System.out.println();
                         System.out.println(" 감사합니다!*^_^* ");
