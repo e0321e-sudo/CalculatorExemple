@@ -6,7 +6,7 @@ import java.util.List;
 public class Calculator {
     private List<Integer> results = new ArrayList<>();
 
-    public int calculate(int num1, int num2, char operator){
+    public int calculate(int num1, int num2, char operator) {
 
 
         int result = 0;
@@ -33,10 +33,19 @@ public class Calculator {
         results.add(result);
         return result;
     }
-    public List<Integer> getResults(){
+
+    public List<Integer> getResults() {
         return new ArrayList<>(results);
     }
-    public void c(){
+
+    public void clear() {
         results.clear();
+        System.out.println("누적결과가 초기화되었습니다!0ㅁ0");
+    }
+    public void remove(){
+        if(results.isEmpty()){
+            System.out.println("x 삭제할 누적 결과가 없습니다.");
+            return;
+        } results.remove(0);
     }
 }
