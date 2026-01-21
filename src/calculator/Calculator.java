@@ -8,6 +8,7 @@ public class Calculator {
 
     public int calculate(int num1, int num2, char operator){
 
+
         int result = 0;
         switch (operator) {
             case '+':
@@ -31,5 +32,11 @@ public class Calculator {
         }
         results.add(result);
         return result;
+    }
+    public List<Integer> getResults(){
+        return new ArrayList<>(results);
+    }
+    public void c(){
+        results.clear();
     }
 }
