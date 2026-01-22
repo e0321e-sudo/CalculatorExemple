@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator();
+        ArithmeticCalculator<Integer> arithmeticCalculator = new ArithmeticCalculator<>();
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Hello, Calculation!!");

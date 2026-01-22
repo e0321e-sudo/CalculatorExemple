@@ -44,7 +44,7 @@ public enum OperatorType {
                 return op;
             }
         }
-        throw new IllegalArgumentException("올바른 연산자가 아닙니다" + input);
+        throw new IllegalArgumentException("올바른 연산자가 아닙니다!(+, -, *, /) ->[ " + input + " ]");
     }
 
     public abstract double apply(double num1, double num2);

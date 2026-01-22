@@ -3,11 +3,13 @@ package calculator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArithmeticCalculator {
+public class ArithmeticCalculator <T extends Number>{
     private List<Double> results = new ArrayList<>();
 
-    public double calculate(double num1, double num2, OperatorType type) {
-        double result = type.apply(num1, num2);
+    public double calculate(T num1, T num2, OperatorType type) {
+        double a = num1.doubleValue();
+        double b = num2.doubleValue();
+        double result = type.apply(a, b);
 
         results.add(result);
         return result;
