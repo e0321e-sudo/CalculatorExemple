@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();
+        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator();
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Hello, Calculation!!");
@@ -27,11 +27,12 @@ public class App {
                 }
                 int num2 = sc.nextInt();
                 System.out.print("사칙연산 기호를 입력하세요: ");
-                char operator = sc.next().charAt(0);
+                String operator = sc.next();
+                OperatorType type = OperatorType.fromSymbol(operator);
 
-                int result = calculator.calculate(num1, num2, operator);
+                double result = arithmeticCalculator.calculate(num1, num2, type);
                 System.out.println("결과: " + result);
-                System.out.println("누적결과: " + calculator.getResults());
+                System.out.println("누적결과: " + arithmeticCalculator.getResults());
                 System.out.println();
 
                 boolean run1 = true;
@@ -42,12 +43,12 @@ public class App {
                         System.out.println("계 산 기 프 로 그 램 종 료 ^_^");
                         run = false; break;
                     } else if ("remove".equals(want)) {
-                        calculator.remove();
-                        System.out.println("삭제 후 누적결과: " + calculator.getResults());
+                        arithmeticCalculator.remove();
+                        System.out.println("삭제 후 누적결과: " + arithmeticCalculator.getResults());
                         continue;
                     } else if ("clear".equals(want)) {
-                        calculator.clear();
-                        System.out.println("초기화 후 누적결과: " + calculator.getResults());
+                        arithmeticCalculator.clear();
+                        System.out.println("초기화 후 누적결과: " + arithmeticCalculator.getResults());
                         continue;
                     } else {
                         run1 = false;
