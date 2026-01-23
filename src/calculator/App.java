@@ -37,7 +37,7 @@ public class App {
 
                 boolean run1 = true;
                 while (run1) {
-                    System.out.println("더 계산하시겠습니까?(exit [종료] / remove [누적결과 첫 번째 삭제] / clear [누적결과 초기화] / 아무거나 입력시 [계속])");
+                    System.out.println("더 계산하시겠습니까?(exit [종료] / remove [첫 번째 삭제] / clear [초기화] / find [조회] / 아무거나 입력시 [계속])");
                     String want = sc.next();
                     if ("exit".equals(want)) {
                         System.out.println("계 산 기 프 로 그 램 종 료 ^_^");
@@ -49,6 +49,11 @@ public class App {
                     } else if ("clear".equals(want)) {
                         arithmeticCalculator.clear();
                         System.out.println("초기화 후 누적결과: " + arithmeticCalculator.getResults());
+                        continue;
+                    } else if ("find".equals(want)) {
+                        System.out.print("기준값을 입력하세요: ");
+                        double input = sc.nextDouble();
+                        System.out.println("조회 결과 ==> " + arithmeticCalculator.find(input));
                         continue;
                     } else {
                         run1 = false;

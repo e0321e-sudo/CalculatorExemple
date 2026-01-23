@@ -2,6 +2,7 @@ package calculator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ArithmeticCalculator <T extends Number>{
     private List<Double> results = new ArrayList<>();
@@ -13,6 +14,11 @@ public class ArithmeticCalculator <T extends Number>{
 
         results.add(result);
         return result;
+    }
+    public List<Double> find(double input){
+        return results.stream().
+                filter(num -> num > input).
+                toList();
     }
 
     public List<Double> getResults() {
